@@ -158,8 +158,11 @@ public:
 
 	GameObject* parent;
 	std::vector<GameObject*> child;
-	
-	GameObject() { this->tex = nullptr; }
+	AI::Node currentNode;
+	GameObject() { 
+		this->tex = nullptr; 
+		this->currentNode = AI::Node(this->position);
+	}
 
 	GameObject(const char* path) {
 		tex_path = path;
@@ -176,7 +179,7 @@ public:
 			SDL_DestroyTexture(tex);
 	}
 
-	AI::Node* currentNode;
+
 
 	float rotation = 0;
 	float acceleration;
@@ -254,8 +257,7 @@ public:
 						  (int)drawPosition.y,
 						  scale.x * world.vec[0][0],
 						  scale.y * world.vec[1][1] };
-		aabb = rect;		
-
+		aabb = rect;				
 
 		SDL_RenderCopyEx(renderer, tex, NULL, &rect, -rotation * 57.2958f, &center, SDL_FLIP_NONE);
 		//std::cout << rect.x << " (" << center.x << "), " << rect.y << " (" << center.y << ") "<< std::endl;

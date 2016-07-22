@@ -6,7 +6,7 @@ namespace AI {
 
 	class Node {
 	private:
-		Node* getNeighbour();
+
 	public:
 		float x, y;
 		operator Vector3() {
@@ -15,10 +15,16 @@ namespace AI {
 		float gCost = INFINITY;
 		float fCost = INFINITY;
 
+		std::vector<Node> neighbours;
+
 		Node() {};
+		Node(Vector3 position) {
+			this->x = position.x;
+			this->y = position.y;
+		}
 		~Node() { 
-			if(this != nullptr)
-				delete this; 
+			//if(this != nullptr)
+				//delete this; 
 		}
 	};
 
@@ -28,13 +34,22 @@ namespace AI {
 	};
 
 	bool processNode(Node* node, Node* goal) {
-		if (node == goal) {
+		if (node->x == goal->x && node->y == goal->y) {
 			return true;
 		}
 	}
 
-	Node* Node::getNeighbour() {
+	Node* getNeighbour(float unit) {
 		Node* n = nullptr;
+		return n;
+	}
+	Node* findNodeFromPosition(std::vector<Node*> nodes, Vector3 pos) {
+		Node* n = nullptr;
+		for (int i = 0; i < nodes.size(); i++) {
+			if (nodes[i]->x == pos.x && nodes[i]->y == pos.y) {
+				n = nodes[i];
+			}
+		}
 		return n;
 	}
 }
