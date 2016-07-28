@@ -15,7 +15,7 @@ namespace AI {
 		float gCost = INFINITY;
 		float fCost = INFINITY;
 
-		std::vector<Node> neighbours;
+		std::vector<Node*> neighbours;
 
 		Node() {};
 		Node(Vector3 position) {
@@ -28,15 +28,13 @@ namespace AI {
 		}
 	};
 
-	
-	class Path {
-
-	};
+	typedef std::vector<Node*> Path;
 
 	bool processNode(Node* node, Node* goal) {
 		if (node->x == goal->x && node->y == goal->y) {
 			return true;
 		}
+		return false;
 	}
 
 	Node* getNeighbour(float unit) {

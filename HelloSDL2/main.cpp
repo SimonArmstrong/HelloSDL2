@@ -23,6 +23,8 @@ SDL_Renderer* r = nullptr;
 
 Color c = { 255, 255, 255, 255 };
 
+SDL_Renderer* renderRef;
+
 enum {
 	KEYBOARD
 };
@@ -136,6 +138,7 @@ std::vector<AI::Node*> generatePath(AI::Node* From, AI::Node* To) {
 	std::vector<AI::Node*> closedNodes;
 	std::vector<AI::Node*> openedNodes;
 	std::vector<AI::Node*> unvisitedNodes;
+	std::vector<AI::Path> paths;
 	std::vector<AI::Node*> record;
 	openedNodes.push_back(From);
 	openedNodes[0]->gCost = 0;
@@ -155,12 +158,16 @@ std::vector<AI::Node*> generatePath(AI::Node* From, AI::Node* To) {
 		//process the node, add it to closedNodes and remove it from openedNodes
 		//Stop and create the path if the current node we are checking is our goal node
 		
-		currentNode->neighbours.push_back(*getNodeAt(Vector3(currentNode->x + UNIT, currentNode->y, 0))); // left
-		currentNode->neighbours.push_back(*getNodeAt(Vector3(currentNode->x - UNIT, currentNode->y, 0))); // right
-		currentNode->neighbours.push_back(*getNodeAt(Vector3(currentNode->x, currentNode->y - UNIT, 0))); // up
-		currentNode->neighbours.push_back(*getNodeAt(Vector3(currentNode->x, currentNode->y + UNIT, 0))); // down
+		SDL_SetRenderDrawColor(renderRef, 255, 0, 0, 255);
+		SDL_RenderDrawPoint(renderRef, currentNode->x, currentNode->y);
 
-		if (AI::processNode(currentNode, To)) {
+		currentNode->neighbours.push_back(getNodeAt(Vector3(currentNode->x + UNIT, currentNode->y, 0))); // left
+		currentNode->neighbours.push_back(getNodeAt(Vector3(currentNode->x - UNIT, currentNode->y, 0))); // right
+		currentNode->neighbours.push_back(getNodeAt(Vector3(currentNode->x, currentNode->y - UNIT, 0))); // up
+		currentNode->neighbours.push_back(getNodeAt(Vector3(currentNode->x, currentNode->y + UNIT, 0))); // down
+
+		if (AI::processNode(currentNode, To)) { //if we find the end of the path
+			//check the score of the path, save the path
 			break;
 		}
 
@@ -301,8 +308,9 @@ void Window::Draw(SDL_Renderer* renderer, SDL_Event *e) {
 					tiles[x + y].draw(renderer);
 				}
 			}
-		}
+		}			
 	}
+
 
 	world.vec[0][2] = Camera.x + (SCREEN_WIDTH / 2);
 	world.vec[1][2] = Camera.y + (SCREEN_HEIGHT / 2);
@@ -319,13 +327,17 @@ void Window::Draw(SDL_Renderer* renderer, SDL_Event *e) {
 int main(int argc, char* args[]) {	
 	Window window(SCREEN_WIDTH, SCREEN_HEIGHT, "Window");
 
+	renderRef = window.screen->renderer;
+
 	tile_a.scale = tile_a.scale * scaleFactor;
+
+	buildMap();
 
 	srand(time(NULL));
 
 	skull.Load();
 
-	Camera = Vector3(0, 0, 1);
+	Camera = Vector3(-428, -428, 1);
 
 	skull.speed = 15;
 	skull.position = Vector3(32 * scaleFactor + 96, 32 * scaleFactor, 0);

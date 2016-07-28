@@ -1,17 +1,17 @@
 ﻿  main.cpp
-c:\users\simon.armstrong\documents\perforce\simon studio one\programming\users\simon.armstrong\hellosdl2\hellosdl2\ai.h(48): warning C4018: '<': signed/unsigned mismatch
+c:\users\simon.armstrong\documents\perforce\simon studio one\programming\users\simon.armstrong\hellosdl2\hellosdl2\ai.h(46): warning C4018: '<': signed/unsigned mismatch
 c:\users\simon.armstrong\documents\perforce\simon studio one\programming\users\simon.armstrong\hellosdl2\hellosdl2\objtest.h(259): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
 c:\users\simon.armstrong\documents\perforce\simon studio one\programming\users\simon.armstrong\hellosdl2\hellosdl2\objtest.h(259): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-c:\users\simon.armstrong\documents\perforce\simon studio one\programming\users\simon.armstrong\hellosdl2\hellosdl2\main.cpp(126): warning C4018: '<': signed/unsigned mismatch
-c:\users\simon.armstrong\documents\perforce\simon studio one\programming\users\simon.armstrong\hellosdl2\hellosdl2\main.cpp(146): warning C4018: '<': signed/unsigned mismatch
-c:\users\simon.armstrong\documents\perforce\simon studio one\programming\users\simon.armstrong\hellosdl2\hellosdl2\main.cpp(189): warning C4018: '<': signed/unsigned mismatch
-c:\users\simon.armstrong\documents\perforce\simon studio one\programming\users\simon.armstrong\hellosdl2\hellosdl2\main.cpp(224): warning C4305: '+=': truncation from 'double' to 'float'
-c:\users\simon.armstrong\documents\perforce\simon studio one\programming\users\simon.armstrong\hellosdl2\hellosdl2\main.cpp(233): warning C4305: '+=': truncation from 'double' to 'float'
-c:\users\simon.armstrong\documents\perforce\simon studio one\programming\users\simon.armstrong\hellosdl2\hellosdl2\main.cpp(242): warning C4305: '+=': truncation from 'double' to 'float'
-c:\users\simon.armstrong\documents\perforce\simon studio one\programming\users\simon.armstrong\hellosdl2\hellosdl2\main.cpp(251): warning C4305: '+=': truncation from 'double' to 'float'
-c:\users\simon.armstrong\documents\perforce\simon studio one\programming\users\simon.armstrong\hellosdl2\hellosdl2\main.cpp(322): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
-c:\users\simon.armstrong\documents\perforce\simon studio one\programming\users\simon.armstrong\hellosdl2\hellosdl2\main.cpp(324): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\simon.armstrong\documents\perforce\simon studio one\programming\users\simon.armstrong\hellosdl2\hellosdl2\ai.h(40): warning C4715: 'AI::processNode': not all control paths return a value
+c:\users\simon.armstrong\documents\perforce\simon studio one\programming\users\simon.armstrong\hellosdl2\hellosdl2\main.cpp(128): warning C4018: '<': signed/unsigned mismatch
+c:\users\simon.armstrong\documents\perforce\simon studio one\programming\users\simon.armstrong\hellosdl2\hellosdl2\main.cpp(149): warning C4018: '<': signed/unsigned mismatch
+c:\users\simon.armstrong\documents\perforce\simon studio one\programming\users\simon.armstrong\hellosdl2\hellosdl2\main.cpp(162): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\simon.armstrong\documents\perforce\simon studio one\programming\users\simon.armstrong\hellosdl2\hellosdl2\main.cpp(196): warning C4018: '<': signed/unsigned mismatch
+c:\users\simon.armstrong\documents\perforce\simon studio one\programming\users\simon.armstrong\hellosdl2\hellosdl2\main.cpp(231): warning C4305: '+=': truncation from 'double' to 'float'
+c:\users\simon.armstrong\documents\perforce\simon studio one\programming\users\simon.armstrong\hellosdl2\hellosdl2\main.cpp(240): warning C4305: '+=': truncation from 'double' to 'float'
+c:\users\simon.armstrong\documents\perforce\simon studio one\programming\users\simon.armstrong\hellosdl2\hellosdl2\main.cpp(249): warning C4305: '+=': truncation from 'double' to 'float'
+c:\users\simon.armstrong\documents\perforce\simon studio one\programming\users\simon.armstrong\hellosdl2\hellosdl2\main.cpp(258): warning C4305: '+=': truncation from 'double' to 'float'
+c:\users\simon.armstrong\documents\perforce\simon studio one\programming\users\simon.armstrong\hellosdl2\hellosdl2\main.cpp(332): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+c:\users\simon.armstrong\documents\perforce\simon studio one\programming\users\simon.armstrong\hellosdl2\hellosdl2\main.cpp(336): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Math.lib(Matrix.obj) : MSIL .netmodule or module compiled with /GL found; restarting link with /LTCG; add /LTCG to the link command line to improve linker performance
 LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/LTCG' specification
 Actor.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
